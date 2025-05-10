@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DK8V169LPW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-DK8V169LPW');
+  </script>
+  
+  <meta charset="UTF-8" />
+  <title>Painel de Monitoramento</title>
+  <style>
+    body { font-family: sans-serif; padding: 10px; background: #111; color: #eee; }
+    h1 { font-size: 1.2rem; margin-bottom: .5rem; }
+    .item { margin: .3rem 0; }
+    .item strong { display: inline-block; width: 120px; }
+  </style>
+</head>
+<body>
+  <h1>🎮 Monitor de Jogo</h1>
+  <div id="monitor-content">
+    <!-- Será preenchido por script -->
+  </div>
+
+  <script>
+    // Atualiza a cada 200ms os valores vindos da janela pai
+    function atualizar() {
+      const m = window.opener.monitorVars;
+      if (!m) return;
+      document.getElementById('monitor-content').innerHTML = `
+        <div class="item"><strong>Score:</strong> ${m.score}</div>
+        <div class="item"><strong>Level:</strong> ${m.level}</div>
+        <div class="item"><strong>Dificuldade:</strong> ${m.dificuldade}</div>
+        <div class="item"><strong>Hits p/ matar:</strong> ${m.hitsToKill}</div>
+        <div class="item"><strong>Aggro Factor:</strong> ${m.aggroFactor.toFixed(2)}</div>
+        <div class="item"><strong>Posição Player:</strong>
+          (${m.playerPosition.x.toFixed(2)},
+           ${m.playerPosition.y.toFixed(2)},
+           ${m.playerPosition.z.toFixed(2)})
+        </div>
+      `;
+    }
+    setInterval(atualizar, 200);
+  </script>
+</body>
+</html>
+ 

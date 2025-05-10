@@ -1,0 +1,109 @@
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:Arial,sans-serif}
+#game-container{position:relative;width:100%;height:100%}
+canvas{display:block; background: transparent}
+#start-screen,#game-over{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10}
+#start-screen h1{font-size:2.5em;margin-bottom:.5em}
+#start-screen button,#game-over button{padding:.8em 2em;font-size:1.2em;border:none;border-radius:8px;cursor:pointer;background:#28a;color:#fff;transition:background .3s}
+#start-screen button:hover{background:#159}
+#hud{position:absolute;top:10px;left:50%;transform:translateX(-50%);display:flex;gap:1em;color:#fff;font-size:1.2em;z-index:5}
+@media(orientation:landscape){#rotate-notice{position:absolute;top:0;left:0;width:100%;height:100%;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:1em;z-index:20}}
+body {
+    background-color: #000;   
+    background-image: url('images/BlackHole.png'); /* Caminho da sua imagem */
+    background-repeat: no-repeat;            /* Evita repetição da imagem */
+    background-size: cover;                  /* Ajusta a imagem para cobrir toda a tela */
+    background-position: center;             /* Centraliza a imagem */
+    background-attachment: fixed;            /* Mantém a imagem fixa ao rolar a página */
+  }
+
+  /* Estados fullscreen sem prefixos (padrão) */
+#game-container:fullscreen {
+    background-image: url('images/BlackHole.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Prefixos para WebKit/Mozilla/IE */
+  #game-container:-webkit-full-screen,
+  #game-container:-moz-full-screen,
+  #game-container:-ms-fullscreen {
+    background-image: url('images/BlackHole.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* O ::backdrop pinta todo o fundo por baixo do elemento fullscreen */
+  #game-container::backdrop {
+    background-image: url('images/BlackHole.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* barra de menu */
+
+header.header {
+  background-color: #002B5B; /* azul escuro */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header__logo {
+  margin-left: 20px;
+}
+
+.header__logo img {
+  height: 60px;
+}
+
+.header__nav {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.header__menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__menu li {
+  display: inline-block;
+}
+
+.header__menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+.header__menu li.Ativo a {
+  border-bottom: 2px solid #fff;
+}
+#topbar {
+  transition: top 0.3s ease;
+}
+
+#topbar.hidden {
+  top: -100px; /* move a barra para cima, fora da tela */
+}

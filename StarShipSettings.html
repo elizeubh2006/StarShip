@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Configuração StarShip 3D</title>
+  <link rel="stylesheet" href="config.css" />
+  <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.176.0/build/three.module.js",
+      "three/examples/jsm/loaders/GLTFLoader.js": "https://cdn.jsdelivr.net/npm/three@0.176.0/examples/jsm/loaders/GLTFLoader.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="config-container">
+    <div id="canvas-wrapper">
+      <div id="resize-container">
+        <div id="canvas-container"></div>
+      </div>
+    </div>
+
+    <aside id="side-panel">
+      <h2>Valores Gerados</h2>
+      <pre id="object-values"></pre>
+      <button id="reset-btn">Reset</button>
+    </aside>
+  </div>
+
+  <div id="edit-panel">
+    <div class="radios">
+      <label><input type="radio" name="obj" value="player" checked> Player</label>
+      <label><input type="radio" name="obj" value="enemy"> Enemy</label>
+      <label><input type="radio" name="obj" value="collectible"> Collectible</label>
+      <label><input type="radio" name="obj" value="earth"> Earth</label>
+      <label><input type="radio" name="obj" value="brightStar"> BrightStar</label>
+    </div>
+    <div id="controls"></div>
+  </div>
+
+  <script type="module" src="config.js"></script>
+</body>
+</html>

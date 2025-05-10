@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DK8V169LPW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-DK8V169LPW');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <title>StarShip 3D</title>
+  <link rel="stylesheet" href="style.css">
+  <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+  <script type="importmap">
+  {
+    "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.176.0/build/three.module.js" }
+  }
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="description" content="Codando Games">
+  <meta name="keywords" content="Games, Jogos, JavaScript, html, css, pack-man, tetris, flappy bird, starship">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+  rel="stylesheet">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+
+</head>
+<body> 
+  <header class="header" id="topbar">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="header__logo">
+                    <a href="../index.html">
+                        <img src="../img/logo.png"  height="60" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="header__nav">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li class="Ativo"><a href="../index.html">Início</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+</header>  
+  <div id="game-container">
+    <div id="start-screen">
+      <img src="Rocket.svg" width="128px"/></br>
+      <h1> StarShip 3D</h1><button id="btn-play">Play</button></div>
+    <div id="hud" style="display:none">
+      <div>Score: <span id="score">0</span></div>
+      <div>Recorde: <span id="highScore">0</span></div>
+      <div>Nível: <span id="level">1</span></div>
+    </div>
+    <div id="game-over" style="display:none;flex-direction:column">
+      <h1>Game Over</h1>
+      <div>Pontuação: <span id="final-score">0</span></div>
+      <button id="btn-restart">Restart</button>
+    </div>
+    <div id="rotate-notice" style="display:none">Por favor, gire seu dispositivo para retrato.</div>
+  </div>
+  <script type="module" src="game.min.js"></script>
+</body>
+</html>
